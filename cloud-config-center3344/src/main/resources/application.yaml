@@ -1,0 +1,21 @@
+server:
+  port: 3344
+spring:
+  application:
+    name: cloud-config-center
+  cloud:
+    config:
+      server:
+        git:
+          #GitHub中的ssh地址
+          uri: https://github.com/IAmTrudy/springcloud-config.git
+          #搜索目录
+          search-paths:
+            - springcloud-config
+      #读取的分支
+      label: master
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
