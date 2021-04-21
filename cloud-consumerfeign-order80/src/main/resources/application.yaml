@@ -1,0 +1,30 @@
+server:
+  port: 80
+spring:
+  application:
+    name: cloud-consumer-order
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/
+#设置超时时间
+ribbon:
+  #获取服务超时时间
+  ReadTimeout: 5000
+  #连接服务超时时间
+  ConnectTimeout: 5000
+
+#feign日志级别
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: FULL
+#日志打印级别
+logging:
+  level:
+    #哪个接口的级别
+    com.lxp.springcloud.service.PaymentFeignService: debug

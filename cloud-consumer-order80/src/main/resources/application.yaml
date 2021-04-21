@@ -1,0 +1,15 @@
+server:
+  port: 80
+
+
+spring:
+  application:
+    name: cloud-order-server
+eureka:
+  client:
+    #表示是否将自己注册进eureka server
+    register-with-eureka: true
+    #是否从eureka server抓取已有的注册信息。单节点无所谓，如果是集群，必须设置true才能配置ribbon使用
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/

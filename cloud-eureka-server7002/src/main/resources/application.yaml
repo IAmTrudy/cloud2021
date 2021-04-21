@@ -1,0 +1,16 @@
+server:
+  port: 7002
+
+eureka:
+  instance:
+    hostname: eureka7002.com
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka/
+#  server:
+#    #禁止自我保护
+#    enable-self-preservation: false
+#    #2秒之内无返回则注销服务
+#    eviction-interval-timer-in-ms: 2000
