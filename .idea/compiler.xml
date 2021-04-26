@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="cloud-api-commons" />
         <module name="cloud-config-center3344" />
+        <module name="cloud-config-client3366" />
         <module name="cloud-consumer-feign-hystrix-order80" />
         <module name="cloud-consumer-hystrix-dashboard9001" />
         <module name="cloud-consumer-order80" />
@@ -23,6 +24,7 @@
         <module name="cloud-provider-payment8004" />
         <module name="cloud-providerconsul-payment8006" />
         <module name="cloud-providerhystrix-payment8005" />
+        <module name="cloud.-config-client3355" />
       </profile>
     </annotationProcessing>
   </component>
