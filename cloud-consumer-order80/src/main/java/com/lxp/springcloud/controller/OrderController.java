@@ -20,7 +20,7 @@ import java.util.List;
 public class OrderController {
 
 //    public static final String URL = "http://localhost:8001";
-    public static final String URL = "http://CLOUD-PAYMENT-SERVER";
+    private static final String URL = "http://CLOUD-PAYMENT-SERVER";
 
     @Autowired
     private RestTemplate restTemplate;
@@ -28,8 +28,8 @@ public class OrderController {
     @Autowired
     private DiscoveryClient discoveryClient;
 
-    @Autowired
-    private MyLB myLB;
+//    @Autowired
+//    private MyLB myLB;
 
     @GetMapping("/consumer/payment/creat")
     public CommonResult<Payment> creat(Payment payment){
@@ -51,14 +51,20 @@ public class OrderController {
         }
     }
 
-    @GetMapping(value = "/consumer/lb")
-    public String getLB(){
-        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVER");
-        if(instances == null || instances.size() <=0){
-            return "无服务";
-        }else{
-            ServiceInstance instance = myLB.instance(instances);
-            return instance.getPort()+"";
-        }
+//    @GetMapping(value = "/consumer/lb")
+//    public String getLB(){
+//        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVER");
+//        if(instances == null || instances.size() <=0){
+//            return "无服务";
+//        }else{
+//            ServiceInstance instance = myLB.instance(instances);
+//            return instance.getPort()+"";
+//        }
+//    }
+
+    @GetMapping("/consumer/payment/zipkin")
+    public String paymentZipkin(){
+        String s = restTemplate.getForObject(URL+"/payment/zipkin",String.class);
+        return s;
     }
 }

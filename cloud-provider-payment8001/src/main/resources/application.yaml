@@ -4,6 +4,12 @@ server:
 spring:
   application:
     name: cloud-payment-server
+  zipkin:
+    base-url: http://localhost:9411
+  sleuth:
+    sampler:
+      #采样率介于0到1之间，1表示全部采样
+      probability: 1
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://192.168.1.174:3306/db2021?useUnicode=true&characterEncoding=utf-8&useSSL=false
@@ -27,6 +33,6 @@ eureka:
     #显示IP地址
     prefer-ip-address: true
     #Eureka客户端向服务端发送心跳的时间间隔，单位为秒（默认30秒）
-    lease-renewal-interval-in-seconds: 1
-    #Eureka服务端在收到最后一次心跳后等待的时间上限（默认90秒），超时将剔除服务
-    lease-expiration-duration-in-seconds: 2
+#    lease-renewal-interval-in-seconds: 1
+#    #Eureka服务端在收到最后一次心跳后等待的时间上限（默认90秒），超时将剔除服务
+#    lease-expiration-duration-in-seconds: 2
