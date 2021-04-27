@@ -28,15 +28,14 @@
         <module name="cloud-stream-rabbitmq-consumer8803" />
         <module name="cloud-stream-rabbitmq-provider8801" />
         <module name="cloud.-config-client3355" />
+        <module name="cloudalibaba-config-nacos-client3377" />
         <module name="cloudalibaba-consumer-nacos-order83" />
         <module name="cloudalibaba-provider-payment9001" />
-      </profile>
-      <profile name="Annotation profile for cloud2021" enabled="true">
-        <sourceOutputDir name="../cloudalinana.provider-payment9002/target/generated-sources/annotations" />
-        <sourceTestOutputDir name="../cloudalinana.provider-payment9002/target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="cloudalinana-provider-payment9002" />
+        <module name="cloudalibaba-provider-payment9002" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cloudalinana-provider-payment9002" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>
