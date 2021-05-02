@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper>
+    <insert id="create">
+        insert into t_order(id,user_id,product_id,count,money,status)
+        value (null ,#{user_id},#{product_id},#{count},#{money},#{status});
+    </insert>
+
+    <update id="update">
+        update t_order set status=1 where user_id = #{user_id} and status=#{status};
+    </update>
+</mapper>
